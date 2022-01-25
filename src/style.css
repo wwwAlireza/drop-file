@@ -1,3 +1,9 @@
+:root {
+    --drop-zone-border-color: #495057;
+    --drop-zone-scale: scale(1);
+    --drop-zone-background: rgba(255, 255, 255, 0);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -13,15 +19,21 @@ body {
 
 #drop-zone {
     width: 80%;
-    height: 20rem;
-    border: 4px dashed #495057;
+    height: 30rem;
+    border: 4px dashed var(--drop-zone-border-color);
+    transition: border .3s, transform .3s, background .2s;
+    transform: var(--drop-zone-scale);
     display: grid;
     place-items: center;
+    position: relative;
+    background-color: var(--drop-zone-background);
 }
 
 #drop-zone-title {
     color: #fff;
-    opacity: .9;
+    opacity: .8;
     font-size: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    z-index: -1;
 }
